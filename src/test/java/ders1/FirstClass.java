@@ -8,17 +8,29 @@ import org.openqa.selenium.chrome.ChromeOptions;
 public class FirstClass {
     public static void main(String[] args) {
 
-        //System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
+        /* chromedriver.exe' yi System32 içine attıysanız bir kurulum satırı yazmanıza gerek yok.
+
+        /*
+        Eğerki Bonigarcia ile değilde manuel olarak webdriver eklediyseniz aşağıdki satırı kodunuza eklemelisiniz.
+
+              System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
+
+         */
 
         WebDriverManager.chromedriver().setup();
 
-        ChromeOptions options = new ChromeOptions().setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
+        WebDriver driver = new ChromeDriver();
 
-        WebDriver driver = new ChromeDriver(options);
+        /*
+            Eğerki chromium tabanlı farklı bir browser kullanıyorsak aşağıdaki gibi option nesnesini kulannarak
+            ayarlarını ChromeDriver'a vermeliyiz.
+
+            ChromeOptions options = new ChromeOptions().setBinary("C:\\Program Files\\BraveSoftware\\Brave-Browser\\Application\\brave.exe");
+            WebDriver driver = new ChromeDriver(options);
+        */
 
 
-        driver.get("https://google.com");
-
+        driver.get("https://google.com/");
 
     }
 }
