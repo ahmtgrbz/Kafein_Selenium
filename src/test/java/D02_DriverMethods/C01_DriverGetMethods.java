@@ -1,4 +1,4 @@
-package ders2;
+package D02_DriverMethods;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +9,7 @@ public class C01_DriverGetMethods {
     public static void main(String[] args) {
 
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver=new ChromeDriver();
 
         // 1- driver.get("url") --> Verdiğimiz url adresine gider.
         driver.get("https://demoqa.com/");
@@ -21,17 +21,13 @@ public class C01_DriverGetMethods {
         System.out.println("Sayfanın Başlığı : " + driver.getTitle());
 
         // 4- driver.getPageSource(); --> Bulunulan sayfanın kaynak kodlarını verir.
-        System.out.println("----------------------------------------");
         System.out.println("Sayfanın Kaynak Kodu :");
         System.out.println(driver.getPageSource());
-        System.out.println("----------------------------------------");
 
         // 5- driver.getWindowHandle() --> Bulunulan sayfannın UNIQUE hash kodunu verir. Her çalıştırmanızda değişir.
         System.out.println("Sayfanın UNIQUE hash kodu : " + driver.getWindowHandle());
 
         // 6- driver.getWindowHandles() --> driver çalışırken açık olan tüm tablerin UNIQUE hash kodunu verir.
-        driver.getWindowHandles().forEach(code -> System.out.println(code));
-
-        //1A4C60373157E160126360A8C76252E0
+        //driver.getWindowHandles().forEach(code -> System.out.println(code));
     }
 }

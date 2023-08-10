@@ -1,4 +1,4 @@
-package ders3;
+package D03_CreatingTests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -8,17 +8,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class WebElementsMethods {
+public class WebElementMethods {
 
     public static void main(String[] args) {
-
-        /*
-         *   Detaylı olarak tüm metodların ne yaptığını öğrenmek isterseniz:
-         *
-         *   https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/WebElement.html
-         *
-         */
-
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -26,10 +18,15 @@ public class WebElementsMethods {
 
         driver.get("https://demoqa.com/text-box");
 
+        /*
+        *   Detaylı olarak tüm metodların ne yaptığını öğrenmek isterseniz:
+        *
+        *   https://www.selenium.dev/selenium/docs/api/java/org/openqa/selenium/WebElement.html
+        *
+        */
+
         // Web element sınıfnın en çok kullanılan metodları
-
         WebElement webElement = driver.findElement(By.id("userName"));
-
 
         // 1- .click() --> webElementine tıklar.
         webElement.click();
@@ -53,7 +50,7 @@ public class WebElementsMethods {
         webElement.isSelected();
 
         // 8- .getAttribute() --> webElementinin istediğimiz bir attirbute'unu değerini döndürür.
-        webElement.getAttribute("istediğim attribute");
+        webElement.getAttribute("id");
 
         // 9- .submit() --> Bu webelementi geçerli öğe bir formsa veya bir form içindeki bir öğeyse,
         //   bu formu gönderir(Entera basmak gibi düşünebilirsiniz).

@@ -1,9 +1,7 @@
-package ders2;
+package D02_DriverMethods;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.Point;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
@@ -13,9 +11,13 @@ public class C03_DriverManageMethods {
     public static void main(String[] args) {
 
         WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
+        WebDriver driver=new ChromeDriver();
+
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+
+        System.out.println("-----------------------------------------------------------------------------------");
 
         // 1- driver.manage().window() method'ları
 
@@ -40,13 +42,11 @@ public class C03_DriverManageMethods {
         System.out.println("Yeni pencere pozisyonu: " + driver.manage().window().getPosition());
 
         // E driver.manage().window().maximize(); --> Bulunulan sayfayı maximize eder.
-        //driver.manage().window().maximize();
-
+        driver.manage().window().maximize();
         // F driver.manage().window().fullscreen(); --> Bulunulan sayfayı fullscreen moduna geçirir.
-        //driver.manage().window().fullscreen();
+        driver.manage().window().fullscreen();
 
         // Bu iki metodun farkını görmek istersek aşağıdaki kodu kullanabiliriz.
-
         /*
         driver.manage().window().maximize();
         System.out.println("maximize konum : " + driver.manage().window().getPosition());
@@ -59,6 +59,9 @@ public class C03_DriverManageMethods {
 
         // G driver.manage().window().minimize(); --> Bulunulan sayfayı minimize eder.
         driver.manage().window().minimize();
+
+        System.out.println("-----------------------------------------------------------------------------------");
+        System.out.println("-----------------------------------------------------------------------------------");
 
         // 2- driver.manage().timeouts() implicitlyWait.
 

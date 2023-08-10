@@ -1,11 +1,11 @@
-package ders1;
+package D01_FırstSelenium;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 public class FirstClass {
+
     public static void main(String[] args) {
 
         /* chromedriver.exe' yi System32 içine attıysanız bir kurulum satırı yazmanıza gerek yok.
@@ -31,6 +31,7 @@ public class FirstClass {
 
 
         driver.get("https://google.com/");
+
 
     }
 }
